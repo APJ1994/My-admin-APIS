@@ -8,6 +8,7 @@ const fs=require('fs/promises');
 const util = require('util');
 const unlink = util.promisify(fs.unlink);
 const Razorpay = require('razorpay');
+const PORT=process.env.PORT || 4200;
 
 
 app.use(express.urlencoded({extended:true}))
@@ -567,6 +568,6 @@ console.log(error);
 });
 
 
-app.listen(4200,()=>{
+app.listen(PORT,()=>{
     console.log(`Server is running on port 4200`);
 });
